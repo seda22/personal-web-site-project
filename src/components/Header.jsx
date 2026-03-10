@@ -1,23 +1,38 @@
-export default function Header(){
-    return(
-            <div>
+import { useContext } from "react"
+import { PersonalContext } from "../contexts/personalContext";
 
+export default function Header() {
+const {langu, toggleLangu, theme, toggleTheme} = useContext(PersonalContext);
+
+    return (
         <div>
-            <input id="switch-component" type="checkbox"
-                className="peer appearance-none w-11 h-5 bg-slate-100 rounded-full checked:bg-slate-800 cursor-pointer transition-colors duration-300" />
-            <label htmlFor="switch-component"
-                className="absolute top-0 left-0 w-5 h-5 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
-            </label>
-        </div>
-        <h5 class="text-[15px]">DARK MODE</h5>
-        <span>|</span>
-        <span><button>TÜRKÇE</button>'YE GEÇ</span>
-        <div><span>A</span></div>
+
+            <div className="relative">
+                <input
+                    id="switch-component"
+                    type="checkbox"
+                    onChange={toggleTheme}
+                    className="peer sr-only"
+                />
+
+                <label
+                    htmlFor="switch-component"
+                    className="w-11 h-5 bg-slate-200 rounded-full flex items-center cursor-pointer transition-colors peer-checked:bg-slate-800"
+                >
+
+                    <div className="w-5 h-5 bg-white rounded-full shadow transition-transform peer-checked:translate-x-6"></div>
+
+                </label>
+            </div>
+            <h5 className="text-[15px]">{langu==="tr"? "KARANLIK TEMA" : "DARK MODE"}</h5>
+            <span>|</span>
+            <button onClick={toggleLangu}>{langu==="tr"? (<div className={`text-[15px] font-bold text-[#777777]`} ><span className={`text-[15px] font-bold ${theme==="light"? "text-[#4731D3]" : "text-[#BAB2E7]"}`} >TÜRKÇE</span>'YE GEÇ</div>) : (<span>ENGLISH</span>)}</button>
+            <div><span>A</span></div>
             <nav>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#hireme">Hire me</a>
             </nav>
-    </div>
+        </div>
     )
 }

@@ -1,4 +1,11 @@
+import { useContext } from "react"
+import { PersonalContext } from "../contexts/personalContext"
+
+
 export default function Hero() {
+    const {langu, toggleLangu, theme, toggleTheme, profileData} = useContext(PersonalContext);
+    const heroData = profileData[langu].personal;
+
     return (
         <div className="flex w-ful max-w-[1140px] mx-auto">
             <section className="flex flex-col gap-10 w-[55.6%]">
@@ -8,13 +15,11 @@ export default function Hero() {
                 </div>
 
                 <div>
-                    <h1 className="text-7xl font-bold">Creative thinker<br />Minimalism lover</h1>
+                    <h1 className="text-7xl font-bold">{heroData.title}</h1>
                 </div>
 
                 <div>
-                    <p className="text-lg">Hi, I’m Almila. I’m a full-stack developer. If you are looking for
-                        a<br />Developer who to craft solid and scalable frontend products with<br />great user experiences.
-                        Let’s shake hands with me.</p>
+                    <p className="text-lg">{heroData.bio}</p>
                 </div>
 
                 <div className="flex gap-3">
@@ -43,10 +48,8 @@ export default function Hero() {
                     </div>
                 </div>
             </section>
-            <section className="w-[44.4%]">
-                <figure>
-                    <img src="./src/images/profile-photo.png" alt="Profile Photo" />
-                </figure>
+            <section className="w-[44.4%] bg-[#000000]">
+                    <img className="w-full" src={heroData.image} alt="Profile Photo" />
             </section>
         </div>)
 }

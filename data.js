@@ -1,13 +1,15 @@
+import profilePhoto from "./src/assets/image-photo.svg"
+
 const initialState = {
-    language: "tr", // aktif dil: "tr" | "en"
 
     tr: {
         personal: {
             name: "Almila Su",
-            title: "Yaratıcı düşünür\nMinimalizm tutkunu",
-            bio: "Merhaba, ben Seda. Full-stack geliştiriciyim. Sağlam ve ölçeklenebilir frontend ürünleri geliştiren, kullanıcı deneyimine önem veren bir geliştirici arıyorsanız doğru yerdesiniz. Hadi tanışalım.",
+            title: "Yaratıcı düşünür\nMinimalizm aşığı",
+            bio: "Merhaba, ben Almila. Full-stack geliştiriciyim. Sağlam ve ölçeklenebilir frontend ürünleri geliştiren, kullanıcı deneyimine önem veren bir geliştirici arıyorsanız doğru yerdesiniz. Hadi tanışalım.",
             avatar: "/assets/almila.jpg",
             email: "almilasucode@gmail.com",
+            image: profilePhoto,
             links: {
                 github: "https://github.com/almilasu",
                 linkedin: "https://linkedin.com/in/almilasu",
@@ -115,6 +117,7 @@ const initialState = {
             bio: "Hi, I'm Almila. I'm a full-stack developer. If you are looking for a Developer who to craft solid and scalable frontend products with great user experiences. Let's shake hands with me.",
             avatar: "/assets/almila.jpg",
             email: "almilasucode@gmail.com",
+            image: profilePhoto,
             links: {
                 github: "https://github.com/almilasu",
                 linkedin: "https://linkedin.com/in/almilasu",
