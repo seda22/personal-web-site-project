@@ -1,4 +1,9 @@
 import profilePhoto from "./src/assets/image-photo.svg"
+import gitHubPhoto from "./src/assets/LinkedIn.svg"
+import linkedInPhoto from "./src/assets/github.png"
+import gitHubPhotoDark from "./src/assets/githubdark.svg"
+import linkedInPhotoDark from "./src/assets/LinkedIndark.svg"
+
 
 const initialState = {
 
@@ -10,11 +15,10 @@ const initialState = {
             avatar: "/assets/almila.jpg",
             email: "almilasucode@gmail.com",
             image: profilePhoto,
-            links: {
-                github: "https://github.com/almilasu",
-                linkedin: "https://linkedin.com/in/almilasu",
-                personalBlog: "https://almilasu.dev",
-            },
+            links: [
+                { name: "Github", link: "https://github.com/almilasu", image: gitHubPhoto, imageDark: gitHubPhotoDark },
+                { name: "Linkedin", link: "https://linkedin.com/in/almilasu", image: linkedInPhoto, imageDark: linkedInPhotoDark },
+            ],
             cta: "İşe Al",
         },
 
@@ -27,7 +31,7 @@ const initialState = {
             label: "İşe Al",
             href: "#contact",
         },
-
+        skillsTitle: "Yetenekler",
         skills: [
             {
                 id: 1,
@@ -118,11 +122,11 @@ const initialState = {
             avatar: "/assets/almila.jpg",
             email: "almilasucode@gmail.com",
             image: profilePhoto,
-            links: {
-                github: "https://github.com/almilasu",
-                linkedin: "https://linkedin.com/in/almilasu",
-                personalBlog: "https://almilasu.dev",
-            },
+            links: [
+                { name: "Linkedin", link: "https://linkedin.com/in/almilasu", image: linkedInPhoto, imageDark: linkedInPhotoDark },
+                { name: "Github", link: "https://github.com/almilasu", image: gitHubPhoto, imageDark: gitHubPhotoDark },
+
+            ],
             cta: "Hire me",
         },
 
@@ -135,7 +139,7 @@ const initialState = {
             label: "Hire me",
             href: "#contact",
         },
-
+        skillsTitle: "Skills",
         skills: [
             {
                 id: 1,

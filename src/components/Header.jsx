@@ -2,7 +2,8 @@ import { useContext } from "react"
 import { PersonalContext } from "../contexts/personalContext";
 
 export default function Header() {
-const {langu, toggleLangu, theme, toggleTheme} = useContext(PersonalContext);
+const {langu, toggleLangu, theme, toggleTheme,profileData} = useContext(PersonalContext);
+const dataNav = profileData[langu].navItems;
 
     return (
         <div>
@@ -29,9 +30,9 @@ const {langu, toggleLangu, theme, toggleTheme} = useContext(PersonalContext);
             <button onClick={toggleLangu}>{langu==="tr"? (<div className={`text-[15px] font-bold text-[#777777]`} ><span className={`text-[15px] font-bold ${theme==="light"? "text-[#4731D3]" : "text-[#BAB2E7]"}`} >TÜRKÇE</span>'YE GEÇ</div>) : (<span>ENGLISH</span>)}</button>
             <div><span>A</span></div>
             <nav>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#hireme">Hire me</a>
+                {dataNav.map((item, index) => <a key={item.id} href={item.href}>
+      {item.label}
+    </a>)}
             </nav>
         </div>
     )
